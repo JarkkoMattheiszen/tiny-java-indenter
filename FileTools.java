@@ -1,3 +1,5 @@
+package tiny.java.indenter;
+
 /*
  * This is free and unencumbered software released into the public domain.
  *
@@ -12,15 +14,11 @@
  * @author Jarkko Mattheiszen
  */
 
-package tiny.java.intender;
+
 
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.io.File;
 import java.io.FileInputStream;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.io.PrintWriter;
 
 public class FileTools {
@@ -38,7 +36,7 @@ public class FileTools {
         }
         
         catch (Exception e) {
-            System.out.println("Error loading source file:" + e.getMessage());
+            System.out.println("Error loading source file: " + e.getMessage());
             System.exit(0);
         }    
         
@@ -53,7 +51,6 @@ public class FileTools {
     }
     
     public void writeFile(ArrayList workbench, String fileName) {
-        File outputFile = new File(fileName);
         try (PrintWriter out = new PrintWriter(fileName)) {
             for (int i = 0; i < workbench.size(); i++) {
                 out.println(workbench.get(i));
