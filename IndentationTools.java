@@ -36,19 +36,14 @@ public class IndentationTools {
             String nextLine = (String) sourceCode.get(lineNumber + 1);
             nextLine = nextLine.trim();
             String fixedLine = printIndentation(level) + line.trim();
-            fixedCode.add(fixedLine);                  
+            fixedCode.add(fixedLine);
             
             // Check if the next line alone justifies lowering the indentation level
             if (nextLine.equals("}")) {
                 if (level > 0) {
                     level--;
                 }
-            }
-            
-            // Check if the current line is a single line comment
-            // else if (fixedLine.substring(0,2).equals("//")) { *
-            //     level = level;
-            // }        
+            }                   
             
             // See if the current line is empty
             else if (fixedLine.length() == 0) {
@@ -61,6 +56,11 @@ public class IndentationTools {
                     level++;
                 }
             }
+            
+            // See if the current line is a single line comment
+            else if (fixedLine.trim().length() > 1 && fixedLine.trim().substring(0,2).equals("//")) {
+                level = level;
+            } 
             
             // See if the current line ends in { *
             else if (fixedLine.substring(fixedLine.length() - 1).equals("{")) {
