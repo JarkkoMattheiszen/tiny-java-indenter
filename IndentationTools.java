@@ -62,6 +62,20 @@ public class IndentationTools {
                 level = level;
             } 
             
+            // See if the current line is a beginning of a multi line comment
+
+            else if (fixedLine.trim().length() > 1 && fixedLine.trim().substring(0,1).equals("/") && fixedLine.trim().substring(1,2).equals("/")) {
+                while (true) {
+                    line = (String) sourceCode.get(lineNumber);
+                    fixedLine = printIndentation(level) + line.trim();
+                    fixedCode.add(fixedLine);
+                    if (fixedLine.trim().length() > 1 && fixedLine.trim().substring(fixedLine.length() - 2).equals("*/")) {
+                        break;
+                    }
+                    lineNumber++;
+                }
+            }
+            
             // See if the current line ends in { *
             else if (fixedLine.substring(fixedLine.length() - 1).equals("{")) {
                 level++;
@@ -84,7 +98,7 @@ public class IndentationTools {
         String fixedLine = line.trim();
         fixedCode.add(fixedLine);        
        
-        System.out.println("All done!");
+        System.out.println("Indentation succesfully fixed.");
         
         return fixedCode;
         

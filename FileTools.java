@@ -43,6 +43,7 @@ public class FileTools {
         return outputArrayList;
     }
     
+    // Not used at the moment
     public void printArrayList(ArrayList arraylist) {
         System.out.println("\nSource file contents:");
         for (int i = 0; i < arraylist.size(); i++) {
@@ -51,6 +52,7 @@ public class FileTools {
     }
     
     public void writeFile(ArrayList workbench, String fileName) {
+        System.out.print("Writing destination file... ");
         try (PrintWriter out = new PrintWriter(fileName)) {
             for (int i = 0; i < workbench.size(); i++) {
                 out.println(workbench.get(i));
