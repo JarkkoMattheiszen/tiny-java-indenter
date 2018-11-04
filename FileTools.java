@@ -23,7 +23,7 @@ import java.io.PrintWriter;
 
 public class FileTools {
     
-    public ArrayList readFile(String fileName) {
+    public ArrayList<String> readFile(String fileName) {
         ArrayList<String> outputArrayList = new ArrayList<>();
         System.out.println("Loading source file...");
         

@@ -29,8 +29,8 @@ public class TinyJavaIndenter {
         Scanner scan = new Scanner(System.in);
         FileTools file = new FileTools();
         IndentationTools indenter = new IndentationTools();
-        ArrayList<String> sourceCode = new ArrayList<>();
-        ArrayList<String> fixedCode = new ArrayList<>();
+        // ArrayList<String> sourceCode = new ArrayList<String>();
+        // ArrayList<String> fixedCode = new ArrayList<String>();
         
         // Intro
         System.out.println("Tiny Java Indenter version 0.02");
@@ -43,10 +43,10 @@ public class TinyJavaIndenter {
         String input = scan.nextLine();
         
         // Load source file into workbench ArrayList
-        sourceCode = file.readFile(input);
+        ArrayList<String> sourceCode = file.readFile(input);
    
         // Fix indentation inside the workbench ArrayList
-        fixedCode = indenter.correctIndentation(sourceCode);
+        ArrayList<String> fixedCode = indenter.correctIndentation(sourceCode);
         
         // Write workbench ArrayList into a new file
         System.out.println("\nWRITE DESTINATION FILE");

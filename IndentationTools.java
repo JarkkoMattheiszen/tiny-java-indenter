@@ -21,7 +21,7 @@ import java.util.ArrayList;
 public class IndentationTools {    
     
     // Go through the source code line by line and fix intendation
-    public ArrayList correctIndentation(ArrayList sourceCode) {
+    public ArrayList<String> correctIndentation(ArrayList sourceCode) {
         ArrayList<String> fixedCode = new ArrayList<>();
         int lineNumber = 0;
         int level = 0;
