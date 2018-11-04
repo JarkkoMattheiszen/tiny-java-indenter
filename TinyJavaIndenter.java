@@ -36,10 +36,9 @@ public class TinyJavaIndenter {
         System.out.println("Tiny Java Indenter version 0.02");
         System.out.println("-------------------------------");
         System.out.println("");
-        System.out.println("LOAD SOURCE FILE");
         
         // Get file name
-        System.out.print("File name: ");
+        System.out.print("Source file name: ");
         String input = scan.nextLine();
         
         // Load source file into workbench ArrayList
@@ -49,8 +48,7 @@ public class TinyJavaIndenter {
         ArrayList<String> fixedCode = indenter.correctIndentation(sourceCode);
         
         // Write workbench ArrayList into a new file
-        System.out.println("\nWRITE DESTINATION FILE");
-        System.out.print("File name: ");
+        System.out.print("\nDestination file name: ");
         input = scan.nextLine();
         file.writeFile(fixedCode, input);
     }
