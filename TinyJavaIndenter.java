@@ -33,7 +33,7 @@ public class TinyJavaIndenter {
         // ArrayList<String> fixedCode = new ArrayList<String>();
         
         // Intro
-        System.out.println("Tiny Java Indenter version 0.02");
+        System.out.println("Tiny Java Indenter version 0.03");
         System.out.println("-------------------------------");
         System.out.println("");
         

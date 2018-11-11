@@ -28,7 +28,6 @@ public class IndentationTools {
         
         System.out.println("\nFixing indentation...");
 
-        // Fix the lines
         while (lineNumber < sourceCode.size() - 1) {
             
             System.out.println("Processing line " + lineNumber + "...");
@@ -63,7 +62,6 @@ public class IndentationTools {
             } 
             
             // See if the current line is a beginning of a multi line comment
-
             else if (fixedLine.trim().length() > 1 && fixedLine.trim().substring(0,1).equals("/") && fixedLine.trim().substring(1,2).equals("/")) {
                 while (true) {
                     line = (String) sourceCode.get(lineNumber);
@@ -109,7 +107,7 @@ public class IndentationTools {
         int i = 0;
         String indentation = "";
         while (i < level) {
-            indentation = indentation.concat("\t");
+            indentation = indentation.concat("    ");
             i++;          
         }
         
